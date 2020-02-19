@@ -1,0 +1,20 @@
+version: 0.2
+
+
+phases:
+  pre_build:
+    commands:
+      - npm install
+      - npm install -g @angular/cli
+
+  build:
+    commands:
+      - ng build --prod
+
+  post_build:
+    commands:
+      - echo $AWS_ACCESS_ID
+      - printf '{"ImageURI":"image_URI"}' > imageDetail.json
+      - aws s3api list-buckets --query "Buckets[].Name"
+      - aws s3 sync ./dist s3://mvp-src-dev --acl 'public-read' --delete
+      
