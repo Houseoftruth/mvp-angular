@@ -16,5 +16,5 @@ phases:
       - echo $AWS_ACCESS_ID
       - printf '{"ImageURI":"image_URI"}' > imageDetail.json
       - aws s3api list-buckets --query "Buckets[].Name"
-      - aws s3 sync ./dist/mvp-angular s3://mvp-src-angular --acl 'public-read' --delete
+      - aws s3 sync ./dist/mvp-angular s3://mvp-source-angular --acl 'public-read' --delete
       
