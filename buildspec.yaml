@@ -13,6 +13,3 @@ phases:
 
   post_build:
     commands:
-      - echo $AWS_ACCESS_ID
-      - printf '{"ImageURI":"image_URI"}' > imageDetail.json
-     
