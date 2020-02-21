@@ -13,4 +13,4 @@ phases:
 
   post_build:
     commands:
-      - aws s3 sync ./dist s3://mvpangular --acl public-read --delete
+      - aws s3 sync ./dist s3://mvpangularsrc --acl public-read --delete
